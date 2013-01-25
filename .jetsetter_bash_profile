@@ -1,0 +1,85 @@
+
+#exports
+export YUI_PATH=~/ant/yuicompressor-2.4.6.jar
+export PATH=$PATH:/opt/local/sbin:/opt/local/bin:$HOME/local/node/bin
+export NODE_PATH=$HOME/local/node:$HOME/local/node/lib/node_modules:/usr/local/lib/node_modules
+export MYSQL=/opt/local/bin/mysql5
+export MYSQL_DUMP=/opt/local/bin/mysqldump5
+export MYSQL_ADMIN=/opt/local/bin/mysqladmin5
+export SVN=svn+ssh://svn.jetsetter.com/var/svn/jetsetter
+export JSCOMP_PATH=/opt/local/ant/compiler.jar
+export DOCS_PATH=/opt/local/ant/NaturalDocs
+
+
+#aliases
+alias sub='open -a "Sublime Text 2"'
+alias light="sh /Users/dschwartz/devel/lighttpd.sh"
+alias mysql="/opt/local/bin/mysql5"
+alias mysqladmin="/opt/local/bin/mysqladmin5"
+alias mysqldump="/opt/local/bin/mysqldump5"
+alias startsearch='cd ~/devel/jetsetutil/etc/search; java -jar start.jar'
+alias startservice='/Users/dschwartz/devel/service_stack/bin/start-dev.sh file:config/travel_config.yml'
+alias startmongo='sudo -b mongod --dbpath=/opt/local/var/db/mongodb'
+alias linkto='~/Desktop/Jetsetter\ Dev\ Scripts/scripts/linkto'
+alias checkout='~/Desktop/Jetsetter\ Dev\ Scripts/scripts/checkout'
+alias fetchall='~/Desktop/Jetsetter\ Dev\ Scripts/scripts/updateall'
+alias pullall='~/Desktop/Jetsetter\ Dev\ Scripts/scripts/pullall'
+alias createbranch='~/Desktop/Jetsetter\ Dev\ Scripts/scripts/createbranch'
+alias checksum='~/Desktop/Jetsetter\ Dev\ Scripts/scripts/checksum'
+alias connectdb='mysql -u root -pjetset5733 -n jetsetwww'
+alias subwww='sub /Users/dschwartz/devel/jetsetwww/release'
+alias sublib='sub /Users/dschwartz/devel/jetsetlib/release'
+alias bounce='echo "bouncing server"; sudo killall php-cgi; sudo killall lighttpd'
+alias connect-gw01='ssh gw01.ops.nj1.jetsetter.com'
+
+
+#git boss mode
+alias gitlog='git log --graph --full-history --all --color --pretty=format:"%x1b[31m%h%x09%x1b[32m%d%x1b[0m%x1b[33m[%an]%x1b[39m%x20%s"'
+
+#function parse_git_branch_and_add_brackets {
+#git branch --no-color 2> /dev/null | sed -e '/^[^*]/d' -e 's/* \(.*\)/\ \[\1\]/'
+#}
+#PS1="\h:\033[1;37m\]\W \[\033[0m\]\u\[\033[1;37m\]\$(parse_git_branch_and_add_brackets) \[\033[0m\]\$ "
+
+function parse_git_branch () {
+ git branch 2> /dev/null | sed -e '/^[^*]/d' -e 's/* \(.*\)/ (\1)/'
+}
+
+
+RED="\[\033[0;31m\]"
+YELLOW="\[\033[0;33m\]"
+GREEN="\[\033[0;32m\]"
+CYAN="\[\033[0;46m\]"
+WHITE="\[\033[0;37m\]"
+NO_COLOUR="\[\033[0m\]"
+
+PS1="$RED\u@machine$NO_COLOUR:\w$WHITE\$(parse_git_branch)$NO_COLOUR\$ "
+
+
+
+
+
+# Setting PATH for MacPython 2.5
+# The orginal version is saved in .bash_profile.pysave
+PATH="/Library/Frameworks/Python.framework/Versions/Current/bin:${PATH}"
+export PATH
+
+# source NVM
+. ~/devel/outside/dev/nvm/nvm.sh
+
+
+
+# {{{
+# Node Completion - Auto-generated, do not touch.
+shopt -s progcomp
+for f in $(command ls ~/.node-completion); do
+  f="$HOME/.node-completion/$f"
+  test -f "$f" && . "$f"
+done
+# }}}
+
+# Setting PATH for Python 2.7
+# The orginal version is saved in .bash_profile.pysave
+PATH="/Library/Frameworks/Python.framework/Versions/2.7/bin:${PATH}"
+export PATH
+
