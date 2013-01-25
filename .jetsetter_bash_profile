@@ -1,4 +1,3 @@
-
 #exports
 export YUI_PATH=~/ant/yuicompressor-2.4.6.jar
 export PATH=$PATH:/opt/local/sbin:/opt/local/bin:$HOME/local/node/bin
@@ -26,11 +25,9 @@ alias fetchall='~/Desktop/Jetsetter\ Dev\ Scripts/scripts/updateall'
 alias pullall='~/Desktop/Jetsetter\ Dev\ Scripts/scripts/pullall'
 alias createbranch='~/Desktop/Jetsetter\ Dev\ Scripts/scripts/createbranch'
 alias checksum='~/Desktop/Jetsetter\ Dev\ Scripts/scripts/checksum'
-alias connectdb='mysql -u root -pjetset5733 -n jetsetwww'
 alias subwww='sub /Users/dschwartz/devel/jetsetwww/release'
 alias sublib='sub /Users/dschwartz/devel/jetsetlib/release'
 alias bounce='echo "bouncing server"; sudo killall php-cgi; sudo killall lighttpd'
-alias connect-gw01='ssh gw01.ops.nj1.jetsetter.com'
 
 
 #git boss mode
